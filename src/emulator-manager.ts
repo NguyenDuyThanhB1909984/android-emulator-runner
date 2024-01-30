@@ -101,8 +101,8 @@ export async function launchEmulator(
  */
 export async function killEmulator(): Promise<void> {
   try {
-    console.log(`::group::Terminate Emulator`);
-    await exec.exec(`adb -s emulator-5554 emu kill`);
+    console.log(`::group::Emulator DeviceId`);
+    await exec.exec(`adb devices`);
   } catch (error) {
     console.log(error instanceof Error ? error.message : error);
   } finally {
